@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="πMPC: A Parallel-in-horizon and Construction-free NMPC Solver">
+  <meta name="description" content="Project page for πMPC, an ADMM-based parallel-in-horizon and construction-free NMPC solver with GPU acceleration, Nesterov restart, and warm starting.">
+  <meta name="keywords" content="πMPC, model predictive control, NMPC, ADMM, parallel-in-horizon, construction-free, GPU acceleration, warm start, Nesterov acceleration">
+  <meta name="author" content="Liang Wu, Bo Yang, Junheng Li, Xu Yang, Yilin Mo, Yang Shi, Aaron D. Ames, Ján Drgoňa">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="πMPC Project Page">
+  <meta property="og:title" content="πMPC: A Parallel-in-horizon and Construction-free NMPC Solver">
+  <meta property="og:description" content="Project page for πMPC, an ADMM-based parallel-in-horizon and construction-free NMPC solver with GPU acceleration, Nesterov restart, and warm starting.">
+  <meta property="og:image" content="static/images/social_preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="πMPC: A Parallel-in-horizon and Construction-free NMPC Solver">
+  <meta name="twitter:description" content="Project page for πMPC, an ADMM-based parallel-in-horizon and construction-free NMPC solver with GPU acceleration, Nesterov restart, and warm starting.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="citation_title" content="πMPC: A Parallel-in-horizon and Construction-free NMPC Solver">
+  <meta name="citation_author" content="Liang Wu">
+<meta name="citation_author" content="Bo Yang">
+<meta name="citation_author" content="Junheng Li">
+<meta name="citation_author" content="Xu Yang">
+<meta name="citation_author" content="Yilin Mo">
+<meta name="citation_author" content="Yang Shi">
+<meta name="citation_author" content="Aaron D. Ames">
+<meta name="citation_author" content="Ján Drgoňa">
+  <meta name="citation_publication_date" content="2026/05/20">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2601.14414">
+  <meta name="theme-color" content="#0f766e">
+  <title>πMPC: A Parallel-in-horizon and Construction-free NMPC Solver</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "πMPC: A Parallel-in-horizon and Construction-free NMPC Solver", "description": "Project page for πMPC, an ADMM-based parallel-in-horizon and construction-free NMPC solver with GPU acceleration, Nesterov restart, and warm starting.", "author": [{"@type": "Person", "name": "Liang Wu"}, {"@type": "Person", "name": "Bo Yang"}, {"@type": "Person", "name": "Junheng Li"}, {"@type": "Person", "name": "Xu Yang"}, {"@type": "Person", "name": "Yilin Mo"}, {"@type": "Person", "name": "Yang Shi"}, {"@type": "Person", "name": "Aaron D. Ames"}, {"@type": "Person", "name": "Ján Drgoňa"}], "datePublished": "2026-05-20", "url": "https://arxiv.org/abs/2601.14414", "image": "static/images/social_preview.png", "keywords": ["model predictive control", "ADMM", "parallel optimization", "GPU acceleration", "nonlinear MPC"], "abstract": "The alternating direction method of multipliers (ADMM) has gained increasing popularity in embedded model predictive control (MPC) due to its code simplicity and pain-free parameter selection. However, existing ADMM solvers either target general quadratic programming (QP) problems or exploit sparse MPC formulations via Riccati recursions, which are inherently sequential and therefore difficult to parallelize for long prediction horizons. This technical note proposes a novel parallel-in-horizon and construction-free nonlinear MPC algorithm, termed πMPC, which combines a new variable-splitting scheme with a velocity-based system representation in the ADMM framework, enabling horizon-wise parallel execution while operating directly on system matrices without explicit MPC-to-QP construction. Numerical experiments and accompanying code are provided to validate the effectiveness of the proposed method.", "citation": "@article{wu2026pimpc,\n  title={πMPC: A Parallel-in-horizon and Construction-free NMPC Solver},\n  author={Wu, Liang and Yang, Bo and Li, Junheng and Yang, Xu and Mo, Yilin and Shi, Yang and Ames, Aaron D. and Drgoňa, Ján},\n  journal={arXiv preprint arXiv:2601.14414},\n  year={2026},\n  url={https://arxiv.org/abs/2601.14414}\n}", "isAccessibleForFree": true}</script>
+</head>
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero publication-header pimpc-hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <img class="pimpc-logo" src="static/images/pimpclogo.png" alt="πMPC logo">
+              <div class="eyebrow">ADMM-based solver for real-time constrained NMPC</div>
+              <h1 class="title is-1 publication-title">πMPC: A Parallel-in-horizon and Construction-free NMPC Solver</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Liang Wu<sup>1,*</sup></span>
+                <span class="author-block">Bo Yang<sup>2,*</sup></span>
+                <span class="author-block">Junheng Li<sup>3,*</sup></span>
+                <span class="author-block">Xu Yang<sup>2</sup></span>
+                <span class="author-block">Yilin Mo<sup>2</sup></span>
+                <span class="author-block">Yang Shi<sup>4</sup></span>
+                <span class="author-block">Aaron D. Ames<sup>3</sup></span>
+                <span class="author-block">Ján Drgoňa<sup>1</sup></span>
+              </div>
+              <div class="is-size-6 publication-authors affiliation-line">
+                <span><sup>1</sup>Johns Hopkins University</span>
+                <span><sup>2</sup>Tsinghua University</span>
+                <span><sup>3</sup>California Institute of Technology</span>
+                <span><sup>4</sup>University of Victoria</span>
+              </div>
+              <div class="institution-links" aria-label="Institution links">
+                <a class="jhu-logo-button" href="https://www.jhu.edu/" target="_blank" rel="noopener" aria-label="Johns Hopkins University">
+                  <img src="static/images/jhu_logo.jpg" alt="Johns Hopkins University logo">
+                </a>
+              </div>
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2601.14414" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/SOLARIS-JHU/PiMPC.jl" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-quote-right"></i></span><span>BibTeX</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero-media">
+      <div class="container is-max-widescreen">
+        <div class="columns is-variable is-4">
+          <div class="column is-4">
+            <img class="hero-gif" src="static/videos/fig_trailer.gif" alt="πMPC tractor-trailer moose test animation">
+          </div>
+          <div class="column is-4">
+            <img class="hero-gif" src="static/videos/fig_quad.gif" alt="πMPC planar quadrotor lemniscate animation">
+          </div>
+          <div class="column is-4">
+            <img class="hero-gif" src="static/videos/fig_cartpole.gif" alt="πMPC cart-pole regulation animation">
+          </div>
+        </div>
+        <p class="media-caption has-text-centered">Notebook-rendered closed-loop GIFs: tractor-trailer moose test, planar quadrotor tracking, and cart-pole regulation.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content publication-body">
+          <p>The alternating direction method of multipliers (ADMM) has gained increasing popularity in embedded model predictive control (MPC) due to its code simplicity and pain-free parameter selection. However, existing ADMM solvers either target general quadratic programming (QP) problems or exploit sparse MPC formulations via Riccati recursions, which are inherently sequential and therefore difficult to parallelize for long prediction horizons. This technical note proposes a novel parallel-in-horizon and construction-free nonlinear MPC algorithm, termed πMPC, which combines a new variable-splitting scheme with a velocity-based system representation in the ADMM framework, enabling horizon-wise parallel execution while operating directly on system matrices without explicit MPC-to-QP construction. Numerical experiments and accompanying code are provided to validate the effectiveness of the proposed method.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-light">
+      <div class="container is-max-widescreen">
+        <div class="columns is-vcentered is-variable is-6">
+          <div class="column is-6">
+            <h2 class="title is-3">Problem</h2>
+            <div class="content publication-body">
+              <p>πMPC solves constrained finite-horizon MPC subproblems directly from the system matrices. In the Julia README interface, the common bound form is configured with <code>xmin/xmax</code>, <code>umin/umax</code>, and <code>dumin/dumax</code>; in the ADMM view these are projection updates over constrained sets <code>X</code>, <code>U</code>, and <code>ΔU</code>.</p>
+              <pre class="math-block">minimize over x,u
+  Σ_{k=0}^{N-1} (
+    ||C x_k - r_y||²_{W_y}
+    + ||u_k - r_u||²_{W_u}
+    + ||Δu_k||²_{W_Δu}
+  ) + ||C x_N - r_y||²_{W_f}
+
+subject to
+  x_{k+1} = A x_k + B u_k + e,       k = 0,...,N-1
+  x_min ≤ x_k ≤ x_max,               k = 0,...,N
+  u_min ≤ u_k ≤ u_max,               k = 0,...,N-1
+  Δu_min ≤ Δu_k ≤ Δu_max,            k = 0,...,N-1</pre>
+              <p>Here <code>A</code>, <code>B</code>, and <code>e</code> are the discrete-time state matrix, input matrix, and affine term. The matrices <code>W_y</code>, <code>W_u</code>, <code>W_Δu</code>, and <code>W_f</code> weight output tracking, input usage, input increments, and terminal tracking.</p>
+            </div>
+          </div>
+          <div class="column is-6">
+            <img class="overview-img" src="static/images/pimpc_problem_overview.png" alt="πMPC problem and parallel-in-horizon overview">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Why It Helps</h2>
+        <p class="section-subtitle has-text-centered">πMPC is designed for the regime where prediction horizons are long, NMPC linearizations update online, and sequential Riccati-style passes become a bottleneck.</p>
+        <img class="benefit-figure" src="static/images/pimpc_benefits.png" alt="πMPC benefit figure comparing long-horizon iteration scaling">
+      </div>
+    </section>
+
+    <section class="section is-light">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Method Highlights</h2>
+        <div class="decorative-logo-wrap">
+          <img src="static/images/decoratlogo.png" alt="Decorative πMPC robotics logo">
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-tag">parallel</div>
+            <h3>Parallel-in-horizon</h3>
+            <p>Each prediction-stage block can update independently, so long horizons map naturally to CPU batches or GPU kernels.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">no QP build</div>
+            <h3>Construction-free</h3>
+            <p>πMPC operates directly on A, B, C, affine terms, references, and constraints instead of rebuilding an explicit MPC-to-QP form.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">ADMM</div>
+            <h3>Projection-based constraints</h3>
+            <p>The ADMM split handles constrained sets through projection updates; the README API exposes state, input, and input-increment bounds.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">GPU</div>
+            <h3>GPU acceleration</h3>
+            <p>The horizon-wise structure is suitable for batched execution, which is especially useful for long-horizon robotics and NMPC rollouts.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">restart</div>
+            <h3>Nesterov acceleration</h3>
+            <p>Adaptive restart improves practical convergence speed while avoiding unstable momentum when residuals stop improving.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-tag">warm start</div>
+            <h3>Receding-horizon warm starts</h3>
+            <p>Closed-loop solves reuse shifted ADMM variables from the previous step, reducing work during trajectory tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3 has-text-centered">Examples</h2>
+        <p class="section-subtitle has-text-centered">Examples are taken from the tutorial notebook and emphasize the solver property each system makes visible.</p>
+        <div class="examples-grid">
+          <div class="example-card">
+            <img src="static/videos/fig_afti16_aircraft.gif" alt="AFTI-16 aircraft tracking">
+            <div class="example-content">
+              <h3>AFTI-16 aircraft tracking</h3>
+              <p>A constrained aircraft model follows a pitch-angle reference while respecting actuator and state bounds.</p>
+              <ul><li>shows warm-started closed-loop tracking</li><li>uses output matrix C and affine-free system matrices</li><li>highlights Nesterov-accelerated ADMM iterations</li></ul>
+            </div>
+          </div>
+          <div class="example-card">
+            <img src="static/videos/fig_dc_servomotor_motion.gif" alt="DC servomotor step tracking">
+            <div class="example-content">
+              <h3>DC servomotor step tracking</h3>
+              <p>A small embedded-style motor example tracks a load-angle command with voltage constraints.</p>
+              <ul><li>simple deployment example</li><li>direct matrix setup without QP construction</li><li>good first hardware-control analogue</li></ul>
+            </div>
+          </div>
+          <div class="example-card">
+            <img src="static/videos/fig_cartpole.gif" alt="Cart-pole regulation">
+            <div class="example-content">
+              <h3>Cart-pole regulation</h3>
+              <p>The notebook cart-pole demo visualizes stabilization with input limits and repeated receding-horizon solves.</p>
+              <ul><li>shows constrained balancing</li><li>warm starts every control step</li><li>compact model useful for tutorials</li></ul>
+            </div>
+          </div>
+          <div class="example-card">
+            <img src="static/videos/fig_trailer.gif" alt="Tractor-trailer moose test">
+            <div class="example-content">
+              <h3>Tractor-trailer moose test</h3>
+              <p>An articulated vehicle tracks a lane-change path while obeying steering and steering-rate limits.</p>
+              <ul><li>long prediction horizon</li><li>rate-constrained inputs</li><li>parallel horizon updates become valuable as preview grows</li></ul>
+            </div>
+          </div>
+          <div class="example-card">
+            <img src="static/videos/fig_quad.gif" alt="Planar quadrotor lemniscate">
+            <div class="example-content">
+              <h3>Planar quadrotor lemniscate</h3>
+              <p>A top-down quadrotor tracks a moving figure-eight reference with predicted path overlays.</p>
+              <ul><li>per-stage references</li><li>GPU-friendly horizon parallelism</li><li>warm-started moving-target tracking</li></ul>
+            </div>
+          </div>
+          <div class="example-card">
+            <img src="static/videos/pimpc_multi_robot_warehouse.gif" alt="Multi-robot warehouse batch control">
+            <div class="example-content">
+              <h3>Multi-robot warehouse batch control</h3>
+              <p>Multiple robots are stacked into a batched MPC problem and routed through warehouse-style stations.</p>
+              <ul><li>batched system matrices</li><li>parallel solves across agents</li><li>demonstrates scalable deployment patterns</li></ul>
+            </div>
+          </div>
+          <div class="example-card">
+            <img src="static/images/fig_process_control.png" alt="Nonlinear process-control example">
+            <div class="example-content">
+              <h3>Nonlinear process-control example</h3>
+              <p>The ventilation/CSTR-style notebook example shows how πMPC can track process outputs under actuator and state limits.</p>
+              <ul><li>constrained process variables</li><li>disturbance-style tracking</li><li>useful outside robot motion examples</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">How πMPC Updates the Horizon</h2>
+        <div class="method-steps">
+          <div><strong>1. Split variables.</strong><span>Introduce local copies of future states, inputs, and increments so each horizon stage owns a compact update.</span></div>
+          <div><strong>2. Project constraints.</strong><span>ADMM separates dynamics consistency from constrained-set projection, including the README bound constraints and projection-friendly constrained updates.</span></div>
+          <div><strong>3. Run in parallel.</strong><span>The stage-wise updates are construction-free and horizon-parallel, so CPU batches and GPU kernels can evaluate many stages at once.</span></div>
+          <div><strong>4. Accelerate and warm start.</strong><span>Nesterov restart improves convergence, and the next MPC solve reuses shifted variables from the previous horizon.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bibtex">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre class="bibtex"><code>@article{wu2026pimpc,
+  title={πMPC: A Parallel-in-horizon and Construction-free NMPC Solver},
+  author={Wu, Liang and Yang, Bo and Li, Junheng and Yang, Xu and Mo, Yilin and Shi, Yang and Ames, Aaron D. and Drgoňa, Ján},
+  journal={arXiv preprint arXiv:2601.14414},
+  year={2026},
+  url={https://arxiv.org/abs/2601.14414}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Built with the Academic Project Page Template. Media files are local and ready for GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
